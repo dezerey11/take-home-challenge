@@ -1,0 +1,10 @@
+table {
+  width: 200px;
+  border: 1px solid black;
+}
+
+th {
+  text-align: left;
+  background-color: rgb(185, 164, 137);
+  padding: 5px;
+}
