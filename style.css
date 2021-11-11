@@ -1,10 +1,32 @@
+body {
+  background-color: rgb(245, 239, 233);
+}
+
 table {
   width: 200px;
   border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
 }
 
 th {
-  text-align: left;
   background-color: rgb(185, 164, 137);
   padding: 5px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+.name {
+  text-align: center;
+  color: rgb(148, 131, 110);
+}
+
+.username:hover {
+  color: rgb(148, 131, 110);
+  cursor: pointer;
 }

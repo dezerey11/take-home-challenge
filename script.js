@@ -5,7 +5,7 @@ function createUsersTable() {
     (data) => {
       data.map((user) => {
         const row = $(`<tr>
-        <td data-user-id="${user.id}">${user.username}</td>
+        <td class="username" data-user-id="${user.id}">${user.username}</td>
       </tr>`);
         $("table").append(row);
 
@@ -18,12 +18,13 @@ function createUsersTable() {
   );
 }
 
-function getUserPosts(userIdNum) {
+function getUserPosts(userIdNum, name) {
   $.ajax({
     url: "https://jsonplaceholder.typicode.com/posts",
   }).then(
     (data) => {
       $(".user-posts").empty();
+      $(".user-posts").append(`<h1 class="name">${name}'s Posts</h1>`);
 
       data.map((post) => {
         if (post.userId === userIdNum) {
@@ -39,7 +40,8 @@ function getUserPosts(userIdNum) {
 
 function handleUserClick(event) {
   const id = $(event.target).data("user-id");
-  getUserPosts(id);
+  const text = $(event.target).text();
+  getUserPosts(id, text);
 }
 
 createUsersTable();
